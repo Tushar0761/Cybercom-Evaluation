@@ -1,0 +1,16 @@
+#loginBoard,
+#RegistraionBoard {
+  width: 450px;
+}
+#loginBoard > div {
+  font-size: 30px;
+  font-weight: bold;
+}
+#help {
+  position: relative;
+}
+#passwordHelp {
+  display: none;
+  position: absolute;
+  width: max-content;
+}

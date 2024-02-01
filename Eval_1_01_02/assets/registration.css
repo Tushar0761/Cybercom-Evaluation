@@ -1,0 +1,8 @@
+#error-registration-city,
+#error-registration-confirmPassword,
+#error-registration-email,
+#error-registration-name,
+#error-registration-password,
+#error-registration-state {
+  display: none;
+}

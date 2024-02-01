@@ -1,0 +1,112 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../assets/registration.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body class="bg-light d-flex justify-content-center align-items-center">
+    <main id="RegistraionBoard" class="p-4 border round">
+      <div style="font-size: 30px; font-weight: bold" class="text-center">
+        Regitstration
+      </div>
+      <div id="form">
+        <section id="Name" class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="Name"
+            id="registraion-name"
+            placeholder="Admin Name"
+          />
+          <span id="error-registration-name" class="text-danger">asd</span>
+        </section>
+
+        <section id="Eamil" class="mb-3">
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="registraion-email"
+            placeholder="email"
+          />
+          <span id="error-registration-email" class="text-danger">asd</span>
+        </section>
+        <section id="Pass" class="mb-3">
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            id="registraion-password"
+            placeholder="Admin Password"
+          />
+          <span id="error-registration-password" class="text-danger">asd</span>
+        </section>
+        <section id="confirmPassword" class="mb-3">
+          <input
+            type="password"
+            class="form-control"
+            name="confirmPassword"
+            id="registraion-confirmPassword"
+            placeholder="Confirm Password"
+          />
+          <span id="error-registration-confirmPassword" class="text-danger"
+            >asd</span
+          >
+        </section>
+        <section id="city" class="mb-3">
+          <select
+            class="form-select form-control"
+            name="city"
+            id="registraion-city"
+          >
+            <option value="">Select City</option>
+          </select>
+          <span id="error-registration-city" class="text-danger"
+            >This Field is required</span
+          >
+        </section>
+        <section id="state" class="mb-3">
+          <select
+            class="form-select form-control"
+            name="state"
+            id="registraion-state"
+          >
+            <option value="">Select State</option>
+          </select>
+          <span id="error-registration-state" class="text-danger"
+            >This Field is required</span
+          >
+        </section>
+        <section id="state" class="mb-3">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="tnc"
+              id="tnc"
+            />
+            Terms & Conditions
+          </div>
+        </section>
+        <button id="registerBtn" class="btn btn-warning">Register</button>
+      </div>
+
+      <a href="../Login.html">
+        <button class="btn btn-dark mt-3">Login</button>
+      </a>
+    </main>
+    <script src="../assets/registration.js"></script>
+  </body>
+</html>
