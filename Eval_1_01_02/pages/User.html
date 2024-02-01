@@ -5,8 +5,6 @@
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../assets/user.css" />
@@ -33,23 +31,66 @@
         </div>
       </div>
 
-      <div id="Main" class="bg-light w-100">
+      <div id="Main" class="bg-light w-100 p-2">
         <div id="heading" style="font-size: 25px; font-weight: bold">
-          Dashboard
+          Add User
         </div>
-        <div class="d-flex justify-content-center">
-          <div class="cards">
-            <h6>User < 18 Years</h6>
-            <h5>15 users</h5>
+        <div id="addForm" class="row m-2">
+          <div class="col-3 p-1">
+            <input
+              type="text"
+              class="form-control"
+              name="Name"
+              id="userName"
+              placeholder="Name"
+            />
           </div>
-          <div class="cards">
-            <h6>User < 18-50 Years Users</h6>
-            <h5>15 users</h5>
+
+          <div class="col-3 p-1">
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="userEmail"
+              placeholder="Email"
+            />
           </div>
-          <div class="cards">
-            <h6>User > 50 Years</h6>
-            <h5>10 users</h5>
+          <div class="col-3 p-1">
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="userPassword"
+              placeholder="password"
+            />
           </div>
+          <div class="col-3 p-1">
+            <input
+              type="date"
+              class="form-control"
+              name="userDate"
+              id="userDate"
+            />
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-warning text-white" id="addBtn">Add</button>
+        </div>
+        <div>
+          <div id="heading" style="font-size: 20px; font-weight: bold">
+            User List
+          </div>
+          <table class="table">
+            <thead class="table-dark">
+              <th>Name</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Birthday</th>
+              <th>Age</th>
+              <th>Action</th>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
       </div>
     </div>
