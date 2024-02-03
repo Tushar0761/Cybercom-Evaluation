@@ -45,28 +45,6 @@ function editUser(id) {
     });
 }
 
-/* function getUser(id) {
-  let userList = getLocalStorage("userList");
-
-  let result = false;
-
-  if (userList !== null) {
-    userList.find((user) => {
-      if (user.email == id) {
-        console.log(user.email == id);
-        console.log("found");
-        result = user;
-        return;
-      }
-    });
-    alert("User is not present.");
-  } else {
-    alert("There is no user data.");
-  }
-  return result;
-}
- */
-
 function deleteUser(id) {
   let userList = getLocalStorage("userList");
   for (let i = 0; i < userList.length; i++) {
@@ -106,11 +84,10 @@ function updateBtnClickEvent(id) {
 
   $("#addBtn").unbind("click").text("Add").click(addBtnClickEvent);
 
-  clearForm();
-
-  addUserList();
-
   setLocalStorage("userList", userList);
+
+  clearForm();
+  addUserList();
 }
 
 function addBtnClickEvent() {
@@ -144,6 +121,7 @@ function isUserPresent() {
 function addUserToLocalStorage() {
   let userList = JSON.parse(localStorage.getItem("userList"));
   userAge = 2024 - userDate.val().split("-")[0];
+
   user = {
     name: userName.val(),
     email: userEmail.val(),

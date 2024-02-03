@@ -4,6 +4,7 @@ $(document).ready(() => {
 
 $("#helpIcon").click(() => {
   $("#passwordHelp").fadeIn("fast");
+
   setTimeout(() => {
     $("#passwordHelp").fadeOut("slow");
   }, 4000);
@@ -12,18 +13,51 @@ $("#helpIcon").click(() => {
 $("#loginBtn").click(() => {
   let email = $("#LoginEmail").val();
   let pass = $("#LoginPassword").val();
+
   if (!validate(email, pass)) {
     return;
-  } else {
-    let admin = JSON.parse(localStorage.getItem("admin"));
-    if (admin.pass === pass && admin.email === email) {
-      localStorage.setItem("currentLogin", JSON.stringify(email));
-      window.location.href = "pages/Dashboard.html";
-    } else {
-      alert("Id and Password didnt match");
-    }
   }
+
+  handleLogin(email, pass);
 });
+
+function handleLogin(email, pass) {
+  let admin = JSON.parse(localStorage.getItem("admin"));
+  let currentLogin = { user: {}, isAdmin: false };
+
+  if (admin.pass === pass && admin.email === email) {
+    currentLogin.user = admin;
+    currentLogin.isAdmin = true;
+
+    localStorage.setItem("currentLogin", JSON.stringify(currentLogin));
+
+    window.location.href = "pages/Dashboard.html";
+    return true;
+  } else if (admin.email === email) {
+    alert("Id and Password didnt match for admin");
+  } else {
+    let userList = JSON.parse(localStorage.getItem("userList"));
+
+    let userfound = false;
+
+    userList.forEach((user) => {
+      if (user.email === email) {
+        userfound = true;
+
+        if (user.password === pass) {
+          currentLogin.user = user;
+          localStorage.setItem("currentLogin", JSON.stringify(currentLogin));
+
+          window.location.href = "./pages/Sub-user.html";
+        } else {
+          alert("Wrong Password.");
+        }
+      }
+    });
+
+    if (!userfound) alert("No user found with this email.");
+  }
+}
 
 function validate(email, pass) {
   let bool = true;

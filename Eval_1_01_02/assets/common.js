@@ -1,12 +1,43 @@
 $("#panel");
 
 $(document).ready(() => {
+  if (!checkAdmin()) {
+    return;
+  }
+
   $("#Panel").html(panel);
   addClass();
   $("#logout").click(logoutHandler);
+  loadUserName();
 });
 
-let panel = `<h3 id="hello">Hello Tushar</h3>
+function checkAdmin() {
+  let currentUser = getLocalStorage("currentLogin");
+  if (!currentUser) {
+    $("body").html(
+      `<center>
+      <h1>Please Login First</h1>
+      <a href='../login.html'>Login</a>
+      </center>`
+    );
+    return false;
+  }
+
+  if (!currentUser.isAdmin) {
+    $("body").html("<center><h1>Only Admin can access this page</h1></center>");
+
+    return false;
+  }
+  return true;
+}
+
+function loadUserName() {
+  let currentUser = getLocalStorage("currentLogin");
+
+  $("#userName").text(currentUser.user.name);
+}
+
+let panel = `<h3 id="hello">Hello <span id="userName"></span></h3>
         <div id="links">
         <a href="./Dashboard.html">
         <div>

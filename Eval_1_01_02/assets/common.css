@@ -6,3 +6,12 @@
 #Main {
   overflow: scroll;
 }
+
+.cards {
+  height: 150px;
+  width: 250px;
+  margin: 10px;
+  background: #c9d9f0;
+  padding: 10px;
+  text-align: center;
+}

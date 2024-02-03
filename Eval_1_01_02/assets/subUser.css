@@ -1,0 +1,8 @@
+#Panel,
+#Main {
+  height: 100vh;
+}
+
+#Main {
+  overflow: scroll;
+}

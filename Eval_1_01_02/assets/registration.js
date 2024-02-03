@@ -22,10 +22,12 @@ $("#registerBtn").click(() => {
   if (validate()) {
     if (!tnc.is(":checked")) {
       alert("Please Accept the Terms and Conditions");
+
       return;
     }
     if (registerAdmin()) {
       clearForm();
+
       alert("Admin registered, You can now login");
     }
   }
